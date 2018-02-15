@@ -1,5 +1,3 @@
-if (typeof(templayed) == "undefined") {
-
 // *
 // * templayed.js {version} (Uncompressed)
 // * The fastest and smallest Mustache compliant Javascript templating library written in 1806 bytes (uncompressed)
@@ -10,7 +8,7 @@ if (typeof(templayed) == "undefined") {
 // * $Date: {date} $
 // *
 
-templayed = function(template, vars) {
+function templayed(template, vars) {
 
   var get = function(path, i) {
     i = 1; path = path.replace(/\.\.\//g, function() { i++; return ''; });
@@ -43,4 +41,4 @@ templayed = function(template, vars) {
 
 templayed.version = '{version}';
 
-}
+if (typeof window != 'undefined') window.templayed = templayed;
